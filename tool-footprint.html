@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plastic Footprint Calculator | EcoMarkets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">EcoMarkets</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="survey.html">Survey</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="tools.html" class="active">Tools</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="page-container">
+
+    <h1 class="page-title"><i class="fa-solid fa-recycle"></i> Plastic Footprint Calculator</h1>
+
+    <p class="page-text">
+        Calculate how much plastic you use every week, month, and year.
+        This tool helps you understand your personal plastic footprint and its environmental impact.
+    </p>
+
+    <div class="tool-intro">
+        <div class="tool-tips">
+            <h3><i class="fa-solid fa-lightbulb"></i> Tips for Accurate Calculation</h3>
+            <ul>
+                <li>Track your plastic usage for a typical week</li>
+                <li>Include all types of plastic packaging</li>
+                <li>Don't forget small items like straws and wrappers</li>
+                <li>Consider both shopping and food packaging</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-box">
+        <h2 class="section-title"><i class="fa-solid fa-calculator"></i> Enter Your Plastic Usage</h2>
+        
+        <div class="input-grid">
+            <div class="input-group">
+                <label for="bags">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Plastic bags used per week:
+                </label>
+                <input type="number" id="bags" placeholder="e.g., 5" min="0">
+                <span class="input-help">Shopping bags, produce bags, etc.</span>
+            </div>
+
+            <div class="input-group">
+                <label for="bottles">
+                    <i class="fa-solid fa-bottle-water"></i>
+                    Plastic bottles used per week:
+                </label>
+                <input type="number" id="bottles" placeholder="e.g., 2" min="0">
+                <span class="input-help">Water bottles, drink bottles, etc.</span>
+            </div>
+
+            <div class="input-group">
+                <label for="containers">
+                    <i class="fa-solid fa-utensils"></i>
+                    Food containers used per week:
+                </label>
+                <input type="number" id="containers" placeholder="e.g., 3" min="0">
+                <span class="input-help">Takeaway containers, yogurt cups, etc.</span>
+            </div>
+
+            <div class="input-group">
+                <label for="wrappers">
+                    <i class="fa-solid fa-candy-cane"></i>
+                    Plastic wrappers used per week:
+                </label>
+                <input type="number" id="wrappers" placeholder="e.g., 7" min="0">
+                <span class="input-help">Snack wrappers, packaging films, etc.</span>
+            </div>
+        </div>
+
+        <button class="submit-btn" onclick="calculateFootprint()">
+            <i class="fa-solid fa-calculator"></i> Calculate My Footprint
+        </button>
+
+        <div id="result1" class="output-box" style="display: none;">
+            <!-- Results will be inserted here -->
+        </div>
+    </div>
+
+    <div class="tool-comparison">
+        <h2 class="section-title"><i class="fa-solid fa-chart-bar"></i> How You Compare</h2>
+        <div class="comparison-grid">
+            <div class="comparison-item">
+                <h4>Average Indian</h4>
+                <div class="comparison-bar">
+                    <div class="bar-fill" style="width: 60%"></div>
+                </div>
+                <span class="comparison-value">11 kg/year</span>
+            </div>
+            <div class="comparison-item">
+                <h4>Your Footprint</h4>
+                <div class="comparison-bar">
+                    <div class="bar-fill your-bar" style="width: 0%"></div>
+                </div>
+                <span class="comparison-value your-value">0 kg/year</span>
+            </div>
+            <div class="comparison-item">
+                <h4>Eco Target</h4>
+                <div class="comparison-bar">
+                    <div class="bar-fill target-bar" style="width: 20%"></div>
+                </div>
+                <span class="comparison-value">4 kg/year</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="reduction-tips">
+        <h2 class="section-title"><i class="fa-solid fa-seedling"></i> Tips to Reduce Your Footprint</h2>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <h4>Carry Reusable Bags</h4>
+                <p>Keep cloth bags in your car or backpack for unexpected shopping trips.</p>
+            </div>
+            <div class="tip-card">
+                <i class="fa-solid fa-bottle-water"></i>
+                <h4>Use a Water Bottle</h4>
+                <p>Carry a reusable water bottle instead of buying plastic bottles.</p>
+            </div>
+            <div class="tip-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h4>Choose Reusable Containers</h4>
+                <p>Bring your own containers for takeaway food and leftovers.</p>
+            </div>
+            <div class="tip-card">
+                <i class="fa-solid fa-store"></i>
+                <h4>Buy in Bulk</h4>
+                <p>Purchase items with minimal packaging or in larger quantities.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tool-navigation">
+        <a href="tools.html" class="hero-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back to Tools
+        </a>
+        <a href="tool-bag.html" class="hero-btn">
+            Next: Bag Recommender <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+</section>
+
+<script>
+// PLASTIC FOOTPRINT CALCULATOR
+function calculateFootprint() {
+    let bags = parseInt(document.getElementById("bags").value) || 0;
+    let bottles = parseInt(document.getElementById("bottles").value) || 0;
+    let containers = parseInt(document.getElementById("containers").value) || 0;
+    let wrappers = parseInt(document.getElementById("wrappers").value) || 0;
+
+    // Calculate totals
+    let weekly = bags + bottles + containers + wrappers;
+    let monthly = weekly * 4;
+    let yearly = weekly * 52;
+
+    // Environmental impact calculations
+    let plasticWeight = yearly * 0.005; // Average 5g per plastic item
+    let co2Emissions = plasticWeight * 3; // Rough CO2 equivalent
+    let oceanImpact = yearly * 0.1; // Estimated percentage that reaches oceans
+
+    // Update comparison chart
+    let yourPercentage = Math.min((plasticWeight / 11) * 100, 100);
+    document.querySelector('.your-bar').style.width = yourPercentage + '%';
+    document.querySelector('.your-value').textContent = plasticWeight.toFixed(1) + ' kg/year';
+
+    let msg = `
+        <div class="results-header">
+            <h3><i class="fa-solid fa-chart-pie"></i> Your Plastic Footprint Analysis</h3>
+        </div>
+        
+        <div class="results-grid">
+            <div class="result-item">
+                <div class="result-value">${weekly}</div>
+                <div class="result-label">Items per Week</div>
+            </div>
+            <div class="result-item">
+                <div class="result-value">${monthly}</div>
+                <div class="result-label">Items per Month</div>
+            </div>
+            <div class="result-item">
+                <div class="result-value">${yearly}</div>
+                <div class="result-label">Items per Year</div>
+            </div>
+            <div class="result-item">
+                <div class="result-value">${plasticWeight.toFixed(1)}kg</div>
+                <div class="result-label">Plastic Weight/Year</div>
+            </div>
+        </div>
+
+        <div class="environmental-impact">
+            <h4><i class="fa-solid fa-triangle-exclamation"></i> Environmental Impact</h4>
+            <div class="impact-item">
+                <i class="fa-solid fa-cloud"></i>
+                <span><strong>CO2 Emissions:</strong> Equivalent to ${co2Emissions.toFixed(1)} kg of carbon dioxide</span>
+            </div>
+            <div class="impact-item">
+                <i class="fa-solid fa-water"></i>
+                <span><strong>Ocean Risk:</strong> ${oceanImpact.toFixed(0)} items could reach oceans yearly</span>
+            </div>
+            <div class="impact-item">
+                <i class="fa-solid fa-tree"></i>
+                <span><strong>Decomposition:</strong> Will take ${(yearly * 450).toLocaleString()} years to fully decompose</span>
+            </div>
+        </div>
+
+        <div class="results-actions">
+            <button class="hero-btn" onclick="resetCalculator()">
+                <i class="fa-solid fa-rotate-left"></i> Calculate Again
+            </button>
+            <button class="hero-btn" onclick="shareResults()">
+                <i class="fa-solid fa-share"></i> Share Results
+            </button>
+        </div>
+    `;
+
+    const resultElement = document.getElementById("result1");
+    resultElement.innerHTML = msg;
+    resultElement.style.display = 'block';
+    
+    // Scroll to results
+    resultElement.scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetCalculator() {
+    document.getElementById("bags").value = '';
+    document.getElementById("bottles").value = '';
+    document.getElementById("containers").value = '';
+    document.getElementById("wrappers").value = '';
+    document.getElementById("result1").style.display = 'none';
+    document.querySelector('.your-bar').style.width = '0%';
+    document.querySelector('.your-value').textContent = '0 kg/year';
+}
+
+function shareResults() {
+    alert('Share functionality would be implemented here! Typically this would share to social media or generate a report.');
+}
+</script>
+
+</body>
+</html>
+

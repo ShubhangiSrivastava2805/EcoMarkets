@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Plastic Waste Meter | EcoMarkets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">EcoMarkets</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="survey.html">Survey</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="tools.html" class="active">Tools</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="page-container">
+
+    <h1 class="page-title"><i class="fa-solid fa-gauge-high"></i> Live Plastic Waste Meter</h1>
+
+    <p class="page-text">
+        This real-time simulation shows how quickly plastic waste accumulates in weekly markets. 
+        Based on our research, an average market generates approximately <strong>1 plastic item every 2 seconds</strong>.
+    </p>
+
+    <div class="waste-stats">
+        <div class="stat-box">
+            <span class="stat-number" id="globalWaste">0</span>
+            <span class="stat-label">Global Plastic Items Today</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number" id="marketWaste">0</span>
+            <span class="stat-label">Market Plastic Items Today</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number" id="oceanBound">0</span>
+            <span class="stat-label">Ocean-Bound Items Today</span>
+        </div>
+    </div>
+
+    <div class="tool-box">
+        <h2 class="section-title"><i class="fa-solid fa-stopwatch"></i> Live Waste Generation</h2>
+
+        <div class="waste-meter-container">
+            <div class="meter-header">
+                <h3>Weekly Market Plastic Waste</h3>
+                <div class="meter-controls">
+                    <button id="playPause" class="meter-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button id="resetMeter" class="meter-btn">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="meter-display">
+                <div id="liveCounter" class="waste-counter">
+                    <span class="counter-number">0</span>
+                    <span class="counter-label">plastic items generated</span>
+                </div>
+                <div class="meter-visual">
+                    <div class="meter-fill" id="meterFill"></div>
+                </div>
+            </div>
+
+            <div class="time-scale">
+                <div class="time-unit">
+                    <span>Per Second</span>
+                    <strong id="perSecond">0.5</strong>
+                </div>
+                <div class="time-unit">
+                    <span>Per Minute</span>
+                    <strong id="perMinute">30</strong>
+                </div>
+                <div class="time-unit">
+                    <span>Per Hour</span>
+                    <strong id="perHour">1,800</strong>
+                </div>
+                <div class="time-unit">
+                    <span>Per Day</span>
+                    <strong id="perDay">43,200</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="meter-info">
+            <p><i class="fa-solid fa-circle-info"></i> This simulation is based on data from our survey of 41 weekly market visitors and vendors.</p>
+        </div>
+    </div>
+
+    <div class="impact-visualization">
+        <h2 class="section-title"><i class="fa-solid fa-chart-bar"></i> Environmental Impact</h2>
+        
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-icon ocean">
+                    <i class="fa-solid fa-water"></i>
+                </div>
+                <h4>Ocean Pollution</h4>
+                <div class="impact-value" id="oceanImpact">0 items</div>
+                <p>Plastic items that could reach oceans</p>
+            </div>
+
+            <div class="impact-card">
+                <div class="impact-icon co2">
+                    <i class="fa-solid fa-cloud"></i>
+                </div>
+                <h4>CO2 Emissions</h4>
+                <div class="impact-value" id="co2Impact">0 kg</div>
+                <p>Carbon footprint from plastic production</p>
+            </div>
+
+            <div class="impact-card">
+                <div class="impact-icon wildlife">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <h4>Wildlife Risk</h4>
+                <div class="impact-value" id="wildlifeImpact">0 animals</div>
+                <p>Marine animals at risk of ingestion</p>
+            </div>
+
+            <div class="impact-card">
+                <div class="impact-icon landfill">
+                    <i class="fa-solid fa-mountain"></i>
+                </div>
+                <h4>Landfill Space</h4>
+                <div class="impact-value" id="landfillImpact">0 m³</div>
+                <p>Space occupied in landfills</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="solutions-preview">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Make a Difference</h2>
+        <p class="page-text">Small changes can significantly reduce this waste stream. Here's what you can do:</p>
+        
+        <div class="action-grid">
+            <div class="action-card">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <h4>Bring Your Own Bag</h4>
+                <p>Eliminate 4-8 plastic bags per shopping trip</p>
+                <span class="impact-save">Saves 200+ bags/year</span>
+            </div>
+
+            <div class="action-card">
+                <i class="fa-solid fa-bottle-water"></i>
+                <h4>Use Reusable Bottles</h4>
+                <p>Avoid single-use plastic water bottles</p>
+                <span class="impact-save">Saves 365+ bottles/year</span>
+            </div>
+
+            <div class="action-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h4>Choose Reusable Containers</h4>
+                <p>Bring containers for takeaway food</p>
+                <span class="impact-save">Saves 100+ containers/year</span>
+            </div>
+
+            <div class="action-card">
+                <i class="fa-solid fa-store"></i>
+                <h4>Support Eco-Vendors</h4>
+                <p>Shop at vendors who use alternatives</p>
+                <span class="impact-save">Encourages change</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tool-navigation">
+        <a href="tool-bag.html" class="hero-btn">
+            <i class="fa-solid fa-arrow-left"></i> Previous: Bag Recommender
+        </a>
+        <a href="tool-vendor-profit.html" class="hero-btn">
+            Next: Vendor Calculator <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+</section>
+
+<script>
+// LIVE PLASTIC WASTE METER
+let plasticCount = 0;
+let isRunning = true;
+let interval;
+let startTime = Date.now();
+
+// Initialize the meter
+function initMeter() {
+    updateAllDisplays();
+    if (isRunning) {
+        interval = setInterval(updateMeter, 2000); // Update every 2 seconds (1 item)
+    }
+}
+
+function updateMeter() {
+    plasticCount += 1;
+    updateAllDisplays();
+}
+
+function updateAllDisplays() {
+    // Update main counter
+    document.getElementById('liveCounter').querySelector('.counter-number').textContent = 
+        plasticCount.toLocaleString();
+    
+    // Update meter fill (max 1000 items for visualization)
+    const fillPercentage = Math.min((plasticCount / 1000) * 100, 100);
+    document.getElementById('meterFill').style.width = fillPercentage + '%';
+    
+    // Update time scale calculations
+    const secondsElapsed = (Date.now() - startTime) / 1000;
+    const itemsPerSecond = secondsElapsed > 0 ? plasticCount / secondsElapsed : 0;
+    
+    document.getElementById('perSecond').textContent = itemsPerSecond.toFixed(1);
+    document.getElementById('perMinute').textContent = Math.round(itemsPerSecond * 60).toLocaleString();
+    document.getElementById('perHour').textContent = Math.round(itemsPerSecond * 3600).toLocaleString();
+    document.getElementById('perDay').textContent = Math.round(itemsPerSecond * 86400).toLocaleString();
+    
+    // Update impact calculations
+    updateImpactDisplays();
+}
+
+function updateImpactDisplays() {
+    // Ocean impact (10% of plastic reaches oceans)
+    const oceanItems = Math.round(plasticCount * 0.1);
+    document.getElementById('oceanImpact').textContent = oceanItems.toLocaleString() + ' items';
+    
+    // CO2 impact (3kg CO2 per kg of plastic, avg 5g per item)
+    const co2Kg = (plasticCount * 0.005 * 3).toFixed(1);
+    document.getElementById('co2Impact').textContent = co2Kg + ' kg';
+    
+    // Wildlife impact (1 animal affected per 1000 items)
+    const animalsAtRisk = Math.round(plasticCount / 1000);
+    document.getElementById('wildlifeImpact').textContent = animalsAtRisk.toLocaleString() + ' animals';
+    
+    // Landfill impact (0.001 m³ per item)
+    const landfillSpace = (plasticCount * 0.001).toFixed(1);
+    document.getElementById('landfillImpact').textContent = landfillSpace + ' m³';
+    
+    // Update global stats (simulated)
+    updateGlobalStats();
+}
+
+function updateGlobalStats() {
+    // Simulate global plastic waste (much larger numbers)
+    const globalMultiplier = 1000000;
+    const marketMultiplier = 1000;
+    
+    document.getElementById('globalWaste').textContent = 
+        (plasticCount * globalMultiplier).toLocaleString();
+    document.getElementById('marketWaste').textContent = 
+        (plasticCount * marketMultiplier).toLocaleString();
+    document.getElementById('oceanBound').textContent = 
+        (plasticCount * globalMultiplier * 0.1).toLocaleString();
+}
+
+// Control functions
+document.getElementById('playPause').addEventListener('click', function() {
+    isRunning = !isRunning;
+    const icon = this.querySelector('i');
+    
+    if (isRunning) {
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
+        interval = setInterval(updateMeter, 2000);
+    } else {
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
+        clearInterval(interval);
+    }
+});
+
+document.getElementById('resetMeter').addEventListener('click', function() {
+    plasticCount = 0;
+    startTime = Date.now();
+    updateAllDisplays();
+});
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', initMeter);
+</script>
+
+</body>
+</html>

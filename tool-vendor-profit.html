@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vendor Profit Calculator | EcoMarkets</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar">
+      <div class="logo">EcoMarkets</div>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="survey.html">Survey</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="tools.html" class="active">Tools</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+  </nav>
+
+  <section class="page-container">
+    <h1 class="page-title"><i class="fa-solid fa-coins"></i> Vendor Profit Calculator</h1>
+
+    <p class="page-text">
+      Compare daily profits from selling <strong>plastic bags</strong> and <strong>cloth/jute bags</strong>.
+      This helps show vendors the long-term economic benefits of switching to eco-friendly alternatives.
+    </p>
+
+    <div class="tool-intro">
+        <div class="tool-tips">
+            <h3><i class="fa-solid fa-lightbulb"></i> Business Insights</h3>
+            <ul>
+                <li>Calculate both short-term and long-term profitability</li>
+                <li>Consider customer retention from eco-friendly practices</li>
+                <li>Factor in potential government incentives or penalties</li>
+                <li>Account for brand value improvement with green initiatives</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-box">
+        <h2 class="section-title"><i class="fa-solid fa-calculator"></i> Enter Your Business Data</h2>
+        
+        <div class="input-grid">
+            <!-- Plastic Bags Section -->
+            <div class="input-section">
+                <h3 class="input-section-title">
+                    <i class="fa-solid fa-bag-shopping" style="color: #666;"></i>
+                    Plastic Bags
+                </h3>
+                <div class="input-group">
+                    <label for="p_bags">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Bags sold per day:
+                    </label>
+                    <input type="number" id="p_bags" placeholder="e.g., 50" min="0" value="50">
+                    <span class="input-help">Typical daily sales volume</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="p_cost">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        Cost price per bag (₹):
+                    </label>
+                    <input type="number" id="p_cost" placeholder="e.g., 1" min="0" step="0.5" value="1">
+                    <span class="input-help">Purchase cost from supplier</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="p_sell">
+                        <i class="fa-solid fa-tag"></i>
+                        Selling price per bag (₹):
+                    </label>
+                    <input type="number" id="p_sell" placeholder="e.g., 3" min="0" step="0.5" value="3">
+                    <span class="input-help">Price charged to customers</span>
+                </div>
+            </div>
+
+            <!-- Cloth/Jute Bags Section -->
+            <div class="input-section">
+                <h3 class="input-section-title">
+                    <i class="fa-solid fa-leaf" style="color: #47C5C9;"></i>
+                    Cloth/Jute Bags
+                </h3>
+                <div class="input-group">
+                    <label for="c_bags">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Bags sold per day:
+                    </label>
+                    <input type="number" id="c_bags" placeholder="e.g., 10" min="0" value="10">
+                    <span class="input-help">Expected daily sales volume</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="c_cost">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        Cost price per bag (₹):
+                    </label>
+                    <input type="number" id="c_cost" placeholder="e.g., 10" min="0" step="0.5" value="10">
+                    <span class="input-help">Higher initial investment</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="c_sell">
+                        <i class="fa-solid fa-tag"></i>
+                        Selling price per bag (₹):
+                    </label>
+                    <input type="number" id="c_sell" placeholder="e.g., 15" min="0" step="0.5" value="15">
+                    <span class="input-help">Premium pricing for eco-friendly</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Business Factors -->
+        <div class="business-factors">
+            <h3 class="section-title"><i class="fa-solid fa-chart-line"></i> Additional Business Factors</h3>
+            <div class="factors-grid">
+                <div class="factor-group">
+                    <label for="customer_growth">
+                        <i class="fa-solid fa-users"></i>
+                        Expected customer growth with eco-bags (%):
+                    </label>
+                    <input type="number" id="customer_growth" placeholder="e.g., 10" min="0" max="100" value="10">
+                    <span class="input-help">Additional customers attracted by eco-friendly practices</span>
+                </div>
+                
+                <div class="factor-group">
+                    <label for="bag_lifespan">
+                        <i class="fa-solid fa-repeat"></i>
+                        Cloth bag reuse frequency:
+                    </label>
+                    <select id="bag_lifespan">
+                        <option value="10">Low (10 uses)</option>
+                        <option value="50" selected>Medium (50 uses)</option>
+                        <option value="100">High (100+ uses)</option>
+                    </select>
+                    <span class="input-help">How many times customers reuse cloth bags</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="submit-btn" onclick="calculateProfit()">
+            <i class="fa-solid fa-calculator"></i> Calculate Business Profit
+        </button>
+
+        <div id="profitResult" class="output-box" style="display: none;">
+            <!-- Results will be inserted here -->
+        </div>
+    </div>
+
+    <div class="profit-comparison">
+        <h2 class="section-title"><i class="fa-solid fa-scale-balanced"></i> Profit Comparison Analysis</h2>
+        <div class="comparison-charts">
+            <div class="chart-container">
+                <h4>Daily Profit Comparison</h4>
+                <div class="profit-bars">
+                    <div class="profit-bar plastic">
+                        <div class="bar-label">Plastic</div>
+                        <div class="bar-fill" id="plasticBar" style="width: 0%"></div>
+                        <div class="bar-value" id="plasticValue">₹0</div>
+                    </div>
+                    <div class="profit-bar cloth">
+                        <div class="bar-label">Cloth/Jute</div>
+                        <div class="bar-fill" id="clothBar" style="width: 0%"></div>
+                        <div class="bar-value" id="clothValue">₹0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h4>Long-term Projection (1 Year)</h4>
+                <div class="long-term-chart">
+                    <div class="lt-item">
+                        <span>Plastic Bags</span>
+                        <div class="lt-bar">
+                            <div class="lt-fill plastic" id="ltPlasticBar" style="width: 0%"></div>
+                        </div>
+                        <span id="ltPlasticValue">₹0</span>
+                    </div>
+                    <div class="lt-item">
+                        <span>Cloth/Jute Bags</span>
+                        <div class="lt-bar">
+                            <div class="lt-fill cloth" id="ltClothBar" style="width: 0%"></div>
+                        </div>
+                        <span id="ltClothValue">₹0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="business-insights">
+        <h2 class="section-title"><i class="fa-solid fa-chart-pie"></i> Business Insights</h2>
+        <div class="insights-grid">
+            <div class="insight-card">
+                <i class="fa-solid fa-rocket"></i>
+                <h4>Growth Potential</h4>
+                <p>Eco-friendly products show 15-20% annual growth compared to 2-3% for plastic</p>
+            </div>
+            <div class="insight-card">
+                <i class="fa-solid fa-heart"></i>
+                <h4>Customer Loyalty</h4>
+                <p>Vendors using eco-bags report 25% higher customer retention rates</p>
+            </div>
+            <div class="insight-card">
+                <i class="fa-solid fa-shield"></i>
+                <h4>Risk Reduction</h4>
+                <p>Avoid potential fines and penalties from plastic ban regulations</p>
+            </div>
+            <div class="insight-card">
+                <i class="fa-solid fa-award"></i>
+                <h4>Brand Value</h4>
+                <p>Eco-friendly practices can increase brand value by up to 30%</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-plan">
+        <h2 class="section-title"><i class="fa-solid fa-list-check"></i> Transition Strategy</h2>
+        <div class="strategy-steps">
+            <div class="strategy-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Start Small</h4>
+                    <p>Introduce cloth bags alongside plastic initially. Offer small discounts for eco-bag users.</p>
+                </div>
+            </div>
+            <div class="strategy-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Educate Customers</h4>
+                    <p>Explain the environmental benefits and long-term cost savings of reusable bags.</p>
+                </div>
+            </div>
+            <div class="strategy-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Phase Out Plastic</h4>
+                    <p>Gradually reduce plastic bag inventory as cloth bag adoption increases.</p>
+                </div>
+            </div>
+            <div class="strategy-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Promote Your Initiative</h4>
+                    <p>Use your eco-friendly status as a marketing advantage to attract new customers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tool-navigation">
+        <a href="tool-waste-meter.html" class="hero-btn">
+            <i class="fa-solid fa-arrow-left"></i> Previous: Waste Meter
+        </a>
+        <a href="tools.html" class="hero-btn">
+            Back to Tools <i class="fa-solid fa-grid"></i>
+        </a>
+    </div>
+
+  </section>
+
+<script>
+function calculateProfit() {
+    // read inputs and ensure numeric
+    const p_bags = parseInt(document.getElementById("p_bags").value) || 0;
+    const p_cost = parseFloat(document.getElementById("p_cost").value) || 0;
+    const p_sell = parseFloat(document.getElementById("p_sell").value) || 0;
+
+    const c_bags = parseInt(document.getElementById("c_bags").value) || 0;
+    const c_cost = parseFloat(document.getElementById("c_cost").value) || 0;
+    const c_sell = parseFloat(document.getElementById("c_sell").value) || 0;
+
+    const customer_growth = parseInt(document.getElementById("customer_growth").value) || 0;
+    const bag_lifespan = parseInt(document.getElementById("bag_lifespan").value) || 50;
+
+    // daily profits
+    const plastic_profit = (p_sell - p_cost) * p_bags;
+    const cloth_profit = (c_sell - c_cost) * c_bags;
+    
+    // adjust for customer growth
+    const growth_multiplier = 1 + (customer_growth / 100);
+    const adjusted_cloth_profit = cloth_profit * growth_multiplier;
+    
+    const total_profit = plastic_profit + adjusted_cloth_profit;
+
+    // weekly & yearly projections
+    const weekly_profit = total_profit * 7;
+    const monthly_profit = total_profit * 30;
+    const yearly_profit = total_profit * 365;
+
+    // long-term cloth bag profit (considering reuse)
+    const cloth_reuse_profit = (c_sell - (c_cost / bag_lifespan)) * c_bags * growth_multiplier;
+    const yearly_cloth_reuse = cloth_reuse_profit * 365;
+
+    // environmental impact
+    const plastic_reduction = p_bags * 365;
+    const co2_reduction = plastic_reduction * 0.1; // kg CO2 equivalent
+    const ocean_waste_prevented = plastic_reduction * 0.1; // items
+
+    // Update comparison charts
+    updateProfitCharts(plastic_profit, adjusted_cloth_profit, yearly_profit, yearly_cloth_reuse);
+
+    const resultHtml = `
+        <div class="results-header">
+            <h3><i class="fa-solid fa-chart-line"></i> Profit Analysis Results</h3>
+        </div>
+
+        <div class="profit-summary">
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-value">₹${plastic_profit.toFixed(2)}</div>
+                    <div class="summary-label">Daily Plastic Profit</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-value">₹${adjusted_cloth_profit.toFixed(2)}</div>
+                    <div class="summary-label">Daily Cloth Profit</div>
+                </div>
+                <div class="summary-item highlight">
+                    <div class="summary-value">₹${total_profit.toFixed(2)}</div>
+                    <div class="summary-label">Total Daily Profit</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="projection-breakdown">
+            <h4><i class="fa-solid fa-calendar"></i> Projected Earnings</h4>
+            <div class="projection-grid">
+                <div class="projection-item">
+                    <strong>Weekly:</strong> ₹${weekly_profit.toFixed(2)}
+                </div>
+                <div class="projection-item">
+                    <strong>Monthly:</strong> ₹${monthly_profit.toFixed(2)}
+                </div>
+                <div class="projection-item highlight">
+                    <strong>Yearly:</strong> ₹${yearly_profit.toFixed(2)}
+                </div>
+            </div>
+        </div>
+
+        <div class="environmental-benefits">
+            <h4><i class="fa-solid fa-leaf"></i> Environmental Impact</h4>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fa-solid fa-ban"></i>
+                    <div>
+                        <strong>${plastic_reduction.toLocaleString()} plastic bags</strong> reduced yearly
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa-solid fa-cloud"></i>
+                    <div>
+                        <strong>${co2_reduction.toFixed(0)} kg CO2</strong> emissions prevented
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa-solid fa-water"></i>
+                    <div>
+                        <strong>${ocean_waste_prevented.toLocaleString()} items</strong> kept from oceans
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="business-recommendation">
+            <h4><i class="fa-solid fa-lightbulb"></i> Business Recommendation</h4>
+            <div class="recommendation-card">
+                <div class="rec-icon">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div class="rec-content">
+                    <h5>${adjusted_cloth_profit > plastic_profit ? 'Focus on Cloth Bags' : 'Balanced Approach'}</h5>
+                    <p>
+                        ${adjusted_cloth_profit > plastic_profit 
+                            ? 'Your cloth bag business shows higher profitability potential. Consider increasing inventory and marketing efforts.'
+                            : 'Both options contribute to your profits. Maintain a balanced inventory while gradually increasing cloth bag promotion.'
+                        }
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-actions">
+            <button class="hero-btn" onclick="saveCalculation()">
+                <i class="fa-solid fa-download"></i> Save Report
+            </button>
+            <button class="hero-btn secondary" onclick="shareResults()">
+                <i class="fa-solid fa-share"></i> Share Analysis
+            </button>
+        </div>
+    `;
+
+    document.getElementById("profitResult").innerHTML = resultHtml;
+    document.getElementById("profitResult").style.display = 'block';
+}
+
+function updateProfitCharts(plasticProfit, clothProfit, yearlyProfit, yearlyClothReuse) {
+    // Daily profit bars
+    const maxDaily = Math.max(plasticProfit, clothProfit) * 1.2;
+    const plasticWidth = (plasticProfit / maxDaily) * 100;
+    const clothWidth = (clothProfit / maxDaily) * 100;
+    
+    document.getElementById('plasticBar').style.width = plasticWidth + '%';
+    document.getElementById('clothBar').style.width = clothWidth + '%';
+    document.getElementById('plasticValue').textContent = '₹' + plasticProfit.toFixed(2);
+    document.getElementById('clothValue').textContent = '₹' + clothProfit.toFixed(2);
+
+    // Long-term bars
+    const maxYearly = Math.max(yearlyProfit, yearlyClothReuse) * 1.2;
+    const ltPlasticWidth = (yearlyProfit / maxYearly) * 100;
+    const ltClothWidth = (yearlyClothReuse / maxYearly) * 100;
+    
+    document.getElementById('ltPlasticBar').style.width = ltPlasticWidth + '%';
+    document.getElementById('ltClothBar').style.width = ltClothWidth + '%';
+    document.getElementById('ltPlasticValue').textContent = '₹' + yearlyProfit.toLocaleString();
+    document.getElementById('ltClothValue').textContent = '₹' + yearlyClothReuse.toLocaleString();
+}
+
+function saveCalculation() {
+    alert('This would generate a PDF report with your profit analysis and recommendations.');
+}
+
+function shareResults() {
+    alert('Share functionality would allow you to share this analysis with business partners.');
+}
+
+// Initialize with default values
+document.addEventListener('DOMContentLoaded', function() {
+    calculateProfit();
+});
+</script>
+
+</body>
+</html>

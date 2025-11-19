@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | EcoMarkets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">EcoMarkets</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="survey.html">Survey</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="page-container">
+
+    <h1 class="page-title"><i class="fa-solid fa-envelope"></i> Contact Us</h1>
+    <p class="page-text">Have questions about our research or want to collaborate? We'd love to hear from you. Reach out using the form below or through our contact information.</p>
+
+    <div class="contact-stats">
+        <div class="stat-box">
+            <span class="stat-number">24-48</span>
+            <span class="stat-label">Hours Response</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Response Rate</span>
+        </div>
+        <div class="stat-box">
+            <span class="stat-number">Eco</span>
+            <span class="stat-label">Focused Team</span>
+        </div>
+    </div>
+
+    <div class="contact-content">
+        <div class="contact-form-section">
+            <div class="contact-form-box">
+                <h2 class="section-title"><i class="fa-solid fa-paper-plane"></i> Send us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name"><i class="fa-solid fa-user"></i> Your Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fa-solid fa-envelope"></i> Your Email</label>
+                            <input type="email" id="email" placeholder="Enter your email address" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject"><i class="fa-solid fa-tag"></i> Subject</label>
+                        <select id="subject" required>
+                            <option value="">Select a topic</option>
+                            <option value="research">Research Collaboration</option>
+                            <option value="partnership">Partnership Opportunity</option>
+                            <option value="volunteer">Volunteer Inquiry</option>
+                            <option value="media">Media Inquiry</option>
+                            <option value="general">General Question</option>
+                            <option value="technical">Technical Support</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message"><i class="fa-solid fa-message"></i> Your Message</label>
+                        <textarea id="message" rows="6" placeholder="Tell us about your inquiry or how we can help you..." required></textarea>
+                        <div class="char-count">
+                            <span id="charCount">0</span>/500 characters
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" checked>
+                            <span class="checkmark"></span>
+                            Subscribe to our eco-newsletter for updates on plastic reduction initiatives
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="contact-info-section">
+            <div class="contact-info-card">
+                <h2 class="section-title"><i class="fa-solid fa-circle-info"></i> Get in Touch</h2>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email Us</h4>
+                        <p>contact@ecomarkets.org</p>
+                        <span>We'll respond within 24 hours</span>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Call Us</h4>
+                        <p>+1 (555) 123-ECOG</p>
+                        <span>Mon-Fri, 9AM-5PM EST</span>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Visit Us</h4>
+                        <p>123 Green Street<br>Eco City, EC 12345</p>
+                        <span>By appointment only</span>
+                    </div>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Office Hours</h4>
+                        <p>Monday - Friday: 9:00 - 17:00</p>
+                        <span>Weekends: Emergency only</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <h3><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h3>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I use your research data for my project?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Our research data is available for educational and non-commercial purposes. Please credit EcoMarkets and contact us for large datasets.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How can I volunteer for your initiatives?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We welcome volunteers! Fill out the contact form and select "Volunteer Inquiry" as the subject. We'll get back to you with current opportunities.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you conduct workshops or presentations?
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer educational workshops for schools, communities, and organizations. Contact us to discuss your specific needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="success-message" id="successMessage" style="display: none;">
+        <i class="fa-solid fa-circle-check"></i>
+        <div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for contacting EcoMarkets. We'll get back to you within 24 hours.</p>
+        </div>
+    </div>
+
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const messageTextarea = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
+    const successMessage = document.getElementById('successMessage');
+    
+    // Character count for message
+    messageTextarea.addEventListener('input', function() {
+        charCount.textContent = this.value.length;
+    });
+    
+    // FAQ functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const icon = this.querySelector('i');
+            
+            // Toggle current FAQ
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+            
+            // Close other FAQs
+            faqQuestions.forEach(otherQuestion => {
+                if (otherQuestion !== this) {
+                    const otherAnswer = otherQuestion.nextElementSibling;
+                    const otherIcon = otherQuestion.querySelector('i');
+                    otherAnswer.style.display = 'none';
+                    otherIcon.classList.add('fa-chevron-down');
+                    otherIcon.classList.remove('fa-chevron-up');
+                }
+            });
+        });
+    });
+    
+    // Form submission
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Simulate form submission
+        contactForm.style.display = 'none';
+        successMessage.style.display = 'flex';
+        
+        // You would typically send the form data to a server here
+        console.log('Form submitted:', {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value,
+            newsletter: document.getElementById('newsletter').checked
+        });
+    });
+});
+</script>
+
+</body>
+</html>
